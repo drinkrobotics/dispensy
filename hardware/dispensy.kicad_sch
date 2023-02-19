@@ -5,7 +5,11 @@
   (paper "A4")
 
   (title_block
+    (title "Dispensy Mainboard")
+    (date "2023-02-19")
     (company "DrinkRobotics")
+    (comment 2 "!! PCB Thickness: 1mm !!")
+    (comment 4 "DRAFT DRAFT DRAFT DRAFT DRAFT")
   )
 
   (lib_symbols

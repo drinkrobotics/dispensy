@@ -12,6 +12,13 @@ JLC2KiCadLib \
     C194472 \
     C134092 \
     C386740 \
+    C148313 \
+    C279981 \
+    C140675 \
+    C409700 \
+    C172043 \
+    C105883 \
+    C83063 \
     -dir jlc_lib \
     -schematic_lib jlc_schematics \
     -footprint_lib jlc_footprints \
