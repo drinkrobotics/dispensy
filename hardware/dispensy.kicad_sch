@@ -1,0 +1,35 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid a50b51f9-900f-4bbb-8934-4acbc429c37b)
+
+  (paper "A4")
+
+  (title_block
+    (company "DrinkRobotics")
+  )
+
+  (lib_symbols
+  )
+
+
+  (sheet (at 66.04 54.61) (size 34.29 33.02) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid f8ce2893-59d6-4502-b3c7-412c7467c1ef)
+    (property "Sheetname" "Pi" (at 66.04 53.8984 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "pi.kicad_sch" (at 66.04 88.2146 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "dispensy"
+        (path "/a50b51f9-900f-4bbb-8934-4acbc429c37b" (page "2"))
+      )
+    )
+  )
+
+  (sheet_instances
+    (path "/" (page "1"))
+  )
+)
