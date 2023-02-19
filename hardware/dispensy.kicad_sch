@@ -7,8 +7,10 @@
   (title_block
     (title "Dispensy Mainboard")
     (date "2023-02-19")
+    (rev "0")
     (company "DrinkRobotics")
-    (comment 2 "!! PCB Thickness: 1mm !!")
+    (comment 1 "https://git.xythobuz.de/thomas/Dispensy")
+    (comment 3 "PCB Thickness: 1mm")
     (comment 4 "DRAFT DRAFT DRAFT DRAFT DRAFT")
   )
 
