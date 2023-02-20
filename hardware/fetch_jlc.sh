@@ -32,6 +32,12 @@ JLC2KiCadLib \
     C697422 \
     C237221 \
     C106200 \
+    C5613 \
+    C2909114 \
+    C475721 \
+    C497903 \
+    C249838 \
+    C310843 \
     -dir jlc_lib \
     -schematic_lib jlc_schematics \
     -footprint_lib jlc_footprints \
