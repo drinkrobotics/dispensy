@@ -14,37 +14,37 @@ JLC2KiCadLib \
     C113767  `# W25Q128JVSIQ 128Mbit SPI NOR FLASH` \
     C26537   `# NCP1117ST33T3G 3.3V 1A LDO !! LOW STOCK !!` \
     C22452   `# SS54 40V 5A Schottky Barrier Diode` \
-    C132227  `# ` \
-    C86580   `# ` \
-    C194472  `# ` \
-    C134092  `# ` \
-    C386740  `# ` \
-    C148313  `# ` \
-    C279981  `# ` \
-    C140675  `# ` \
-    C409700  `# ` \
-    C172043  `# ` \
-    C105883  `# ` \
-    C83063   `# ` \
-    C2920042 `# ` \
-    C520861  `# ` \
-    C406733  `# ` \
-    C380316  `# ` \
-    C144787  `# ` \
-    C2937625 `# ` \
-    C234182  `# ` \
-    C146690  `# ` \
-    C40877   `# ` \
-    C144481  `# ` \
-    C697422  `# ` \
-    C237221  `# ` \
-    C106200  `# ` \
-    C5613    `# ` \
-    C2909114 `# ` \
-    C475721  `# ` \
-    C497903  `# ` \
-    C249838  `# ` \
-    C310843  `# ` \
+    C132227  `# TJA1042T/3/1J CAN Transceiver` \
+    C86580   `# DS1129-05-S80BP-X RJ45 2x Socket` \
+    C194472  `# LM2576S-5.0/TR Step Down` \
+    C134092  `# Molex USB-C Socket` \
+    C386740  `# USB-A Female` \
+    C148313  `# ABM3-12.000MHZ-D2Y-T 12MHz Ceramic Resonator` \
+    C279981  `# 1kΩ 0402 62.5mW ±1%` \
+    C140675  `# 27pF 0402 50V Ceramic Capacitor` \
+    C409700  `# 5.1kΩ 0402 62.5mW ±1%` \
+    C172043  `# 27.4Ω 0402 62.5mW ±1%` \
+    C105883  `# 100nF 0402 25V Ceramic Capacitor` \
+    C83063   `# 1uF 0402 16V Ceramic Capacitor` \
+    C2920042 `# WS2812E-V5 RGB LED` \
+    C520861  `# SPST Tactile Switch` \
+    C406733  `# 10kΩ 0402 62.5mW ±1%` \
+    C380316  `# 10uF 0603 10V Ceramic Capacitor` \
+    C144787  `# 1MΩ 0402 62.5mW ±1%` \
+    C2937625 `# Straight Square Pins 2.54mm 3P` \
+    C234182  `# Straight Square Pins 2.54mm 2P` \
+    C146690  `# Female Header 2.54mm 3P` \
+    C40877   `# Female Header 2.54mm 6P` \
+    C144481  `# 60.4Ω 1206 250mW ±1%` \
+    C697422  `# 47nF 0402 50V Ceramic Capacitor` \
+    C237221  `# 4.7nF 0402 50V Ceramic Capacitor` \
+    C106200  `# 100pF 0402 50V Ceramic Capacitor` \
+    C5613    `# 74HC165D Parallel to Serial Shift Register` \
+    C2909114 `# SMD Rotary Encoder` \
+    C475721  `# MBR340F 40V 3A Schottky Barrier Diode` \
+    C497903  `# Inductor 100uH ±20% 2A` \
+    C249838  `# 100uF 80V Electrolytic Capacitor` \
+    C310843  `# 1000uF 16V Electrolytic Capacitor` \
     -dir jlc_lib \
     -symbol_lib jlc_schematics \
     -symbol_lib_dir Schematic \
