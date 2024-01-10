@@ -45,6 +45,7 @@ JLC2KiCadLib \
     C497903  `# Inductor 100uH ±20% 2A` \
     C249838  `# 100uF 80V Electrolytic Capacitor` \
     C310843  `# 1000uF 16V Electrolytic Capacitor` \
+    C496132  `# 1x4P Barrier Block 7.62mm 20A 300V` \
     -dir jlc_lib \
     -symbol_lib jlc_schematics \
     -symbol_lib_dir Schematic \
