@@ -46,6 +46,7 @@ JLC2KiCadLib \
     C249838  `# 100uF 80V Electrolytic Capacitor` \
     C310843  `# 1000uF 16V Electrolytic Capacitor` \
     C496132  `# 1x4P Barrier Block 7.62mm 20A 300V` \
+    C347222  `# AMS1117-3.3 3.3V 1A LDO` \
     -dir jlc_lib \
     -symbol_lib jlc_schematics \
     -symbol_lib_dir Schematic \
