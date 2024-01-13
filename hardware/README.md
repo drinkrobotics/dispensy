@@ -12,6 +12,8 @@ To get the 3D models to have the correct offsets I used [this forked version](ht
 
 In the future this may no longer be needed.
 
+Gerber files and PDF and SVG plots can be generated using the included `generate_fab.sh` and `generate_plot.sh` scripts.
+
 ## External Libs
 
-Uses SSD1306 lib from [KiCAD Rookie](https://kicadrookie.blogspot.com/2022/06/ssd1306-i2c-096in-oled-display-kicad_86.html).
+Uses SSD1306 footprint from [KiCAD Rookie](https://kicadrookie.blogspot.com/2022/06/ssd1306-i2c-096in-oled-display-kicad_86.html).
