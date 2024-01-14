@@ -36,7 +36,7 @@ jobs:
           echo `pwd`/mdbook >> $GITHUB_PATH
 
       - name: Build Book
-        run: docs/generate_docs.sh
+        run: docs/generate_docs.sh build
 
       - name: Setup Pages
         uses: actions/configure-pages@v2
