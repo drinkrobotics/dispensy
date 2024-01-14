@@ -1,0 +1,11 @@
+[book]
+title = "Dispensy"
+authors = ["xythobuz"]
+description = "Documentation for Dispensy, the universal Cocktail Machine hardware."
+language = "en"
+multilingual = false
+src = "src"
+
+[output.html]
+git-repository-url = "https://github.com/drinkrobotics/dispensy"
+edit-url-template = "https://github.com/drinkrobotics/dispensy/edit/main/docs/{path}"

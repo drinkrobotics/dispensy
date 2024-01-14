@@ -24,4 +24,5 @@ do
         -l $LAYER \
         -o $OUTDIR/dispensy_pcb.$VAR \
         dispensy.kicad_pcb
+    echo
 done
