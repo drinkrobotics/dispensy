@@ -3,6 +3,7 @@
 cd "$(dirname "$0")"
 
 INFILE="dispensy.kicad_pcb"
+INFILE_SCH="dispensy.kicad_sch"
 OUTDIR="fabrication"
 OUTZIP="fab"
 
@@ -18,7 +19,10 @@ echo "Exporting gerber files"
 #kicad-cli pcb export gerbers -o $OUTDIR/ $INFILE
 kicad-cli pcb export gerbers -o $OUTDIR/ -l F.Cu,B.Cu,F.Mask,B.Mask,F.Paste,B.Paste,F.Silkscreen,B.Silkscreen,Edge.Cuts $INFILE
 
-# TODO BOM for JLCPCB assembly service
+echo "Exporting BOM files"
+kicad-cli sch export python-bom -o $OUTDIR/bom.xml $INFILE_SCH
+
+# TODO convert BOM XML to proper format for JLCPCB
 
 echo "Compressing archive"
 rm -rf $OUTZIP.zip

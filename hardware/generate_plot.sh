@@ -3,7 +3,7 @@
 cd "$(dirname "$0")"
 
 OUTDIR="plot"
-LAYER="F.Cu,B.Cu,F.Mask,B.Mask,F.Paste,B.Paste,F.Silkscreen,B.Silkscreen,Edge.Cuts,User.Drawings,F.Fab,B.Fab"
+LAYER="F.Cu,B.Cu,F.Mask,B.Mask,F.Paste,B.Paste,F.Silkscreen,B.Silkscreen,Edge.Cuts,User.Drawings"
 
 rm -rf $OUTDIR
 mkdir -p $OUTDIR
