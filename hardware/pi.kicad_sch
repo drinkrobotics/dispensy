@@ -6,12 +6,13 @@
 
   (title_block
     (title "Pi RP2040 MCU")
-    (date "2024-01-10")
+    (date "2024-01-20")
     (rev "0")
     (company "DrinkRobotics")
     (comment 1 "https://git.xythobuz.de/thomas/Dispensy")
+    (comment 2 "Licensed under the CERN-OHL-S-2.0+")
     (comment 3 "PCB Thickness: 1mm")
-    (comment 4 "DRAFT DRAFT DRAFT DRAFT DRAFT")
+    (comment 4 "Copyright (c) 2023 - 2024 Thomas Buck <thomas@xythobuz.de>")
   )
 
   (lib_symbols
