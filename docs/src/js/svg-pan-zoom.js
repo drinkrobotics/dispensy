@@ -1,0 +1,1 @@
+../../svg-pan-zoom/dist/svg-pan-zoom.js

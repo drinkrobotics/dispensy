@@ -7888,7 +7888,7 @@
     (stroke (width 0.1524) (type solid))
     (fill (color 0 0 0 0.0000))
     (uuid 2c5a08e6-462b-42d7-a36a-f09062d79876)
-    (property "Sheetname" "5V PSU" (at 125.73 155.4984 0)
+    (property "Sheetname" "PI_PSU" (at 125.73 155.4984 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
     (property "Sheetfile" "psu_lm2576.kicad_sch" (at 125.73 161.8746 0)

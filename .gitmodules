@@ -1,0 +1,3 @@
+[submodule "docs/svg-pan-zoom"]
+	path = docs/svg-pan-zoom
+	url = https://github.com/bumbu/svg-pan-zoom

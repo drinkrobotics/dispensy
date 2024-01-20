@@ -501,15 +501,15 @@
     ],
     [
       "635c7f01-c861-45f9-bb15-e53673572e1d",
-      "External PSU"
+      "EXT_PSU"
     ],
     [
       "f8ce2893-59d6-4502-b3c7-412c7467c1ef",
-      "RP2040"
+      "PI"
     ],
     [
       "2c5a08e6-462b-42d7-a36a-f09062d79876",
-      "5V PSU"
+      "PI_PSU"
     ]
   ],
   "text_variables": {}
