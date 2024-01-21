@@ -26,7 +26,9 @@
 # | source.                                                                      |
 #  ------------------------------------------------------------------------------
 
+# Depends on:
 # https://github.com/TousstNicolas/JLC2KiCad_lib
+# (or https://github.com/Xyntexx/JLC2KiCad_lib/tree/footprint_alignment_workarounds)
 
 # enter directory of script
 cd "$(dirname "$0")"
@@ -73,6 +75,7 @@ JLC2KiCadLib \
     C310843  `# 1000uF 16V Electrolytic Capacitor` \
     C496132  `# 1x4P Barrier Block 7.62mm 20A 300V` \
     C347222  `# AMS1117-3.3 3.3V 1A LDO` \
+    C557648  `# 1x2P 10A 300V 5mm Screw terminal` \
     -dir jlc_lib \
     -symbol_lib jlc_schematics \
     -symbol_lib_dir Schematic \
