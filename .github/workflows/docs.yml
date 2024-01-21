@@ -54,7 +54,7 @@ jobs:
         run: |
           sudo add-apt-repository --yes ppa:kicad/kicad-7.0-releases
           sudo apt update
-          sudo apt install -y --install-recommends kicad prusa-slicer
+          sudo apt install -y --install-recommends kicad prusa-slicer pipx
 
       - name: Install latest mdbook
         run: |
@@ -63,6 +63,9 @@ jobs:
           mkdir mdbook
           curl -sSL $url | tar -xz --directory=./mdbook
           echo `pwd`/mdbook >> $GITHUB_PATH
+
+      - name: Install JLC2KiCad_lib
+        run: pipx install git+https://github.com/Xyntexx/JLC2KiCad_lib.git@footprint_alignment_workarounds
 
       - name: Fetch part footprints
         run: hardware/fetch_jlc.sh
