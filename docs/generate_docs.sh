@@ -50,6 +50,8 @@ for f in `ls src/plot/dispensy_sch.svg/*.svg | sort -r`; do
     echo "</script>" >> src/inc_dispensy_sch.md
     echo "</div>" >> src/inc_dispensy_sch.md
     echo >> src/inc_dispensy_sch.md
+    echo "[Direct link to \`$name\`]($file)." >> src/inc_dispensy_sch.md
+    echo >> src/inc_dispensy_sch.md
 done
 
 echo "Preparing modelview dependencies"

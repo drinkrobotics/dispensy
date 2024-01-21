@@ -16,13 +16,15 @@ You can also view the [Main-Board PCB layout as PDF](./plot/dispensy_pcb.pdf).
     </script>
 </div>
 
+[Direct link to this file](./plot/dispensy_pcb.svg).
+
 ## 3D PCB Model
 
 <p>Status: "<span id="3d_info">Preparing 3D model...</span>"</p>
-<div id="3d_viewer" style="width: 100%; height: 100%;" />
+<div id="3d_viewer" style="width: 100%; height: 100%;"></div>
 <script type="module">
     var view = document.getElementById('3d_viewer');
-    view.style.height = (view.clientWidth / 2) + "px";
+    view.style.height = (view.clientWidth * 0.707) + "px";
     var info = document.getElementById('3d_info');
     import * as View from './js/modelview.js';
     View.init(view, info);
@@ -48,3 +50,5 @@ You can also view the [Main-Board PCB layout as PDF](./plot/dispensy_pcb.pdf).
     xhttp.open("GET", file);
     xhttp.send();
 </script>
+
+[Direct link to this file](./plot/dispensy_pcb.3mf).
