@@ -12,7 +12,7 @@ Check out the [Dispensy documentation](https://drinkrobotics.github.io/dispensy/
 This project is licensed under the [CERN Open Hardware Licence Version 2 - Strongly Reciprocal (CERN-OHL-S-2.0+)](https://ohwr.org/cern_ohl_s_v2.txt) or any later version.
 
 The docs are built using [mdbook](https://github.com/rust-lang/mdBook), licensed as `MPL-2.0`.
-The PCB SVG files in the documentation are displayed using [svg-pan-zoom](https://github.com/bumbu/svg-pan-zoom), licensed as BSD-2-Clause.
+The PCB SVG files in the documentation are displayed using [svg-pan-zoom](https://github.com/bumbu/svg-pan-zoom), licensed as `BSD-2-Clause`.
 
 Please also take a look at the `README.md` files in the subfolders of this project for more info.
 
