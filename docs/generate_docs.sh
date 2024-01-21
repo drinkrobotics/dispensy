@@ -41,7 +41,7 @@ for f in `ls src/plot/dispensy_sch.svg/*.svg | sort -r`; do
     name=`echo $f | sed 's:src/plot/dispensy_sch.svg/::g' | sed 's:.svg::g'`
     echo $name
     echo "<h2>$name</h2>" >> src/inc_dispensy_sch.md
-    echo "<div style=\"background-color: white;\">" >> src/inc_dispensy_sch.md
+    echo "<div style=\"background-color: white; border: 1px solid black;\">" >> src/inc_dispensy_sch.md
     echo "<embed type=\"image/svg+xml\" src=\"$file\" id=\"pz_$name\" style=\"width:100%;\"/>" >> src/inc_dispensy_sch.md
     echo "<script>" >> src/inc_dispensy_sch.md
     echo "document.getElementById('pz_$name').addEventListener('load', function(){" >> src/inc_dispensy_sch.md

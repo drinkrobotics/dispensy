@@ -7,7 +7,7 @@ You can also view the [Main-Board PCB layout as PDF](./plot/dispensy_pcb.pdf).
 ## 2D PCB Layout
 
 <script src="js/svg-pan-zoom.js" charset="UTF-8"></script>
-<div style="background-color: white;">
+<div style="background-color: white; border: 1px solid black;">
     <embed type="image/svg+xml" src="./plot/dispensy_pcb.svg" id="pz_dispensy" style="width: 100%;"/>
     <script>
         document.getElementById('pz_dispensy').addEventListener('load', function(){
@@ -21,7 +21,7 @@ You can also view the [Main-Board PCB layout as PDF](./plot/dispensy_pcb.pdf).
 ## 3D PCB Model
 
 <p>Status: "<span id="3d_info">Preparing 3D model...</span>"</p>
-<div id="3d_viewer" style="width: 100%; height: 100%;"></div>
+<div id="3d_viewer" style="width: 100%; height: 100%; background-color: white; border: 1px solid black;"></div>
 <script type="module">
     var view = document.getElementById('3d_viewer');
     view.style.height = (view.clientWidth * 0.707) + "px";
