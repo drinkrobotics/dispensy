@@ -15,6 +15,6 @@ Fetch the included git submodules after cloning this repository before working o
 The docs are built using [mdbook](https://github.com/rust-lang/mdBook), licensed as `MPL-2.0`.
 Get the [latest release from GitHub](https://github.com/rust-lang/mdBook/releases) for a pre-built binary if you want to test changes to the docs locally.
 
-    mdbook serve --open docs
+    ./docs/generate_docs.sh serve
 
 This will open your browser to a local development instance of the docs.
