@@ -54,7 +54,7 @@ jobs:
         run: |
           sudo add-apt-repository --yes ppa:kicad/kicad-7.0-releases
           sudo apt update
-          sudo apt install -y --install-recommends kicad
+          sudo apt install -y --install-recommends kicad prusa-slicer
 
       - name: Install latest mdbook
         run: |

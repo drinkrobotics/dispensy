@@ -37,14 +37,14 @@ mkdir -p $OUTDIR
 for VAR in pdf svg
 do
     echo "Exporting schematic $VAR"
-    rm -rf dispensy_sch.$VAR
+    rm -rf $OUTDIR/dispensy_sch.$VAR
     kicad-cli sch export $VAR \
         -t "KiCad Default" \
         -o $OUTDIR/dispensy_sch.$VAR \
         dispensy.kicad_sch
 
     echo "Exporting board $VAR"
-    rm -rf dispensy_pcb.$VAR
+    rm -rf $OUTDIR/dispensy_pcb.$VAR
     kicad-cli pcb export $VAR \
         -t "KiCad Classic"  \
         -l $LAYER \
@@ -52,3 +52,16 @@ do
         dispensy.kicad_pcb
     echo
 done
+
+echo "Exporting board step file"
+rm -rf $OUTDIR/dispensy_pcb.step
+kicad-cli pcb export step \
+    -o $OUTDIR/dispensy_pcb.step \
+    dispensy.kicad_pcb
+
+echo "Converting step to 3mf"
+rm -rf $OUTDIR/dispensy_pcb.3mf
+prusa-slicer --export-3mf $OUTDIR/dispensy_pcb.step
+
+echo "Deleting step file"
+rm -rf $OUTDIR/dispensy_pcb.step

@@ -13,6 +13,7 @@ This project is licensed under the [CERN Open Hardware Licence Version 2 - Stron
 
 The docs are built using [mdbook](https://github.com/rust-lang/mdBook), licensed as `MPL-2.0`.
 The PCB SVG files in the documentation are displayed using [svg-pan-zoom](https://github.com/bumbu/svg-pan-zoom), licensed as `BSD-2-Clause`.
+The 3D PCB files in the documentation are displayed using [modelview](https://github.com/jschobben/modelview), licensed as `MIT`.
 
 Please also take a look at the `README.md` files in the subfolders of this project for more info.
 

@@ -6,6 +6,7 @@ This file is intended for contributors that want to modify this website!
 ## Dependencies
 
 The PCB SVG files are displayed using [svg-pan-zoom](https://github.com/bumbu/svg-pan-zoom), licensed as `BSD-2-Clause`.
+The 3D PCB files are displayed using [modelview](https://github.com/jschobben/modelview), licensed as `MIT`.
 Fetch the included git submodules after cloning this repository before working on the docs.
 
     git submodule update --init

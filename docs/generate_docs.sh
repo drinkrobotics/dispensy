@@ -52,6 +52,14 @@ for f in `ls src/plot/dispensy_sch.svg/*.svg | sort -r`; do
     echo >> src/inc_dispensy_sch.md
 done
 
+echo "Preparing modelview dependencies"
+cd modelview
+sed -i 's/info\.inner/info_elem\.inner/g' modelview.js
+./fetch_deps.sh
+cd ..
+rm -rf src/js/deps
+cp -r modelview/deps src/js
+
 echo "Generating docs"
 if [ "$1" = "serve" ] ; then
     mdbook serve --open
