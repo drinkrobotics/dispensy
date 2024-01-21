@@ -64,6 +64,12 @@ jobs:
           curl -sSL $url | tar -xz --directory=./mdbook
           echo `pwd`/mdbook >> $GITHUB_PATH
 
+      - name: Fetch part footprints
+        run: hardware/fetch_jlc.sh
+
+      - name: Generate Plots
+        run: hardware/generate_plot.sh
+
       - name: Build Book
         run: docs/generate_docs.sh build
 

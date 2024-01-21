@@ -28,9 +28,9 @@
 
 cd "$(dirname "$0")"
 
-echo "Generating plots"
+#echo "Generating plots"
 rm -rf src/plot
-../hardware/generate_plot.sh
+#../hardware/generate_plot.sh
 cp -r ../hardware/plot src
 
 echo "Generating plot includes"
