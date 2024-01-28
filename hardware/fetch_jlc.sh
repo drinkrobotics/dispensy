@@ -77,6 +77,7 @@ JLC2KiCadLib \
     C347222  `# AMS1117-3.3 3.3V 1A LDO` \
     C557648  `# 1x2P 10A 300V 5mm Screw terminal` \
     C2982285 `# ASMD1812-350-16V 16V 3.5A/6A Resettable Fuse` \
+    C84264   `# LED Green 0603` \
     -dir jlc_lib \
     -symbol_lib jlc_schematics \
     -symbol_lib_dir Schematic \
