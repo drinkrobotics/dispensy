@@ -7,8 +7,8 @@
   (paper "A4")
   (title_block
     (title "Dispensy Mainboard")
-    (date "2024-02-02")
-    (rev "0")
+    (date "2024-02-05")
+    (rev "1")
     (company "DrinkRobotics")
     (comment 1 "https://git.xythobuz.de/thomas/Dispensy")
     (comment 2 "Licensed under the CERN-OHL-S-2.0+")
@@ -5303,7 +5303,7 @@
 
   (gr_rect (start 93.490456 47.717646) (end 218.490456 137.717646)
     (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts") (tstamp 15e6e131-2cf8-4c48-8043-060e8410f502))
-  (gr_text "Dispensy\nMainboard\nxythobuz.de\nDrinkRobotics" (at 149.5 68.5) (layer "B.Cu") (tstamp 2375193d-d1db-42fc-9aff-45c4e53e4053)
+  (gr_text "Dispensy\nMainboard\nxythobuz.de\nDrinkRobotics.de" (at 149.5 68.5) (layer "B.Cu") (tstamp 2375193d-d1db-42fc-9aff-45c4e53e4053)
     (effects (font (size 3 3) (thickness 0.5) bold) (justify left bottom mirror))
   )
   (gr_text "BOOTSEL" (at 152.775082 95.302545 -90) (layer "F.SilkS") (tstamp 04210cd4-cf06-4dfb-ac55-ab36c46e7bf9)
@@ -5321,7 +5321,7 @@
   (gr_text "+" (at 192.689992 65) (layer "F.SilkS") (tstamp 41030b9e-c538-4ad4-9cee-52dd50a5baa2)
     (effects (font (size 3 3) (thickness 0.5) bold) (justify left bottom))
   )
-  (gr_text "Dispensy\nMainboard\nV1.0" (at 157 109.5) (layer "F.SilkS") (tstamp 48357861-559a-43a0-99b9-d0d2ea031ae6)
+  (gr_text "Dispensy\nMainboard\nV1\n2024-02" (at 157.5 111.5) (layer "F.SilkS") (tstamp 48357861-559a-43a0-99b9-d0d2ea031ae6)
     (effects (font (size 3 3) (thickness 0.5) bold) (justify left bottom))
   )
   (gr_text "RasPi\nPower" (at 93.990456 76.217646) (layer "F.SilkS") (tstamp 4c3a9cda-dbea-447c-8f49-bc30acf9f89a)

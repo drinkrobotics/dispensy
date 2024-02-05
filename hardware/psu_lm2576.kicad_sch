@@ -6,8 +6,8 @@
 
   (title_block
     (title "LM2576 5V Power Supply")
-    (date "2024-02-02")
-    (rev "0")
+    (date "2024-02-05")
+    (rev "1")
     (company "DrinkRobotics")
     (comment 1 "https://git.xythobuz.de/thomas/Dispensy")
     (comment 2 "Licensed under the CERN-OHL-S-2.0+")
