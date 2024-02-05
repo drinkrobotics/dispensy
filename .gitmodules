@@ -1,6 +1,6 @@
 [submodule "docs/svg-pan-zoom"]
 	path = docs/svg-pan-zoom
-	url = https://github.com/bumbu/svg-pan-zoom
+	url = https://github.com/WebSVG/svg-pan-zoom
 [submodule "docs/modelview"]
 	path = docs/modelview
 	url = https://github.com/jschobben/modelview

@@ -45,7 +45,7 @@ for f in `ls src/plot/dispensy_sch.svg/*.svg | sort -r`; do
     echo "<embed type=\"image/svg+xml\" src=\"$file\" id=\"pz_$name\" style=\"width:100%;\"/>" >> src/inc_dispensy_sch.md
     echo "<script>" >> src/inc_dispensy_sch.md
     echo "document.getElementById('pz_$name').addEventListener('load', function(){" >> src/inc_dispensy_sch.md
-    echo "svgPanZoom(document.getElementById('pz_$name'), {controlIconsEnabled: true});" >> src/inc_dispensy_sch.md
+    echo "svgPanZoom(document.getElementById('pz_$name'), {controlIconsEnabled: true, minZoom: 1.0});" >> src/inc_dispensy_sch.md
     echo "})" >> src/inc_dispensy_sch.md
     echo "</script>" >> src/inc_dispensy_sch.md
     echo "</div>" >> src/inc_dispensy_sch.md
