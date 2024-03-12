@@ -26,42 +26,93 @@
 # | source.                                                                      |
 #  ------------------------------------------------------------------------------
 
-cd "$(dirname "$0")"
-
+INSCH="dispensy.kicad_sch"
+INPCB="dispensy.kicad_pcb"
 OUTDIR="plot"
-LAYER="F.Cu,B.Cu,F.Mask,B.Mask,F.Paste,B.Paste,F.Silkscreen,B.Silkscreen,Edge.Cuts,User.Drawings"
+LAYER_F="F.Cu,F.Mask,F.Paste,F.Silkscreen,Edge.Cuts,User.Drawings"
+LAYER_B="B.Cu,B.Mask,B.Paste,B.Silkscreen,Edge.Cuts,User.Drawings"
 
+cd "$(dirname "$0")"
 rm -rf $OUTDIR
 mkdir -p $OUTDIR
 
-for VAR in pdf svg
-do
-    echo "Exporting schematic $VAR"
-    rm -rf $OUTDIR/dispensy_sch.$VAR
-    kicad-cli sch export $VAR \
-        -t "KiCad Default" \
-        -o $OUTDIR/dispensy_sch.$VAR \
-        dispensy.kicad_sch
+#  --------------
+# | 2D Schematic |
+#  --------------
 
-    echo "Exporting board $VAR"
-    rm -rf $OUTDIR/dispensy_pcb.$VAR
-    kicad-cli pcb export $VAR \
-        -t "KiCad Classic"  \
-        -l $LAYER \
-        -o $OUTDIR/dispensy_pcb.$VAR \
-        dispensy.kicad_pcb
-    echo
+for IN in $INSCH
+do
+    echo "Exporting schematic $IN"
+
+    for TYPE in pdf svg
+    do
+        echo "Exporting schematic $TYPE"
+        rm -rf $OUTDIR/$IN.$TYPE
+        kicad-cli sch export $TYPE \
+            -t "KiCad Default" \
+            -o $OUTDIR/$IN.$TYPE \
+            $IN
+        echo
+    done
 done
 
-echo "Exporting board step file"
-rm -rf $OUTDIR/dispensy_pcb.step
-kicad-cli pcb export step \
-    -o $OUTDIR/dispensy_pcb.step \
-    dispensy.kicad_pcb
+for IN in $INPCB
+do
+    echo "Exporting board $IN"
 
-echo "Converting step to 3mf"
-rm -rf $OUTDIR/dispensy_pcb.3mf
-prusa-slicer --export-3mf $OUTDIR/dispensy_pcb.step
+    #  -----------
+    # | 2D Layout |
+    #  -----------
 
-echo "Deleting step file"
-rm -rf $OUTDIR/dispensy_pcb.step
+    for TYPE in pdf svg
+    do
+        rm -rf $OUTDIR/$IN.$TYPE
+        mkdir -p $OUTDIR/$IN.$TYPE
+
+        echo "Exporting board $TYPE"
+        kicad-cli pcb export $TYPE \
+            -t "KiCad Classic"  \
+            -l $LAYER_F,$LAYER_B \
+            -o $OUTDIR/$IN.$TYPE/0_both.$TYPE \
+            $IN
+        echo
+
+        echo "Exporting board front $TYPE"
+        kicad-cli pcb export $TYPE \
+            -t "KiCad Classic"  \
+            -l $LAYER_F \
+            -o $OUTDIR/$IN.$TYPE/1_front.$TYPE \
+            $IN
+        echo
+
+        echo "Exporting board back $TYPE"
+        kicad-cli pcb export $TYPE \
+            -t "KiCad Classic"  \
+            -l $LAYER_B \
+            -o $OUTDIR/$IN.$TYPE/2_back.$TYPE \
+            $IN
+        echo
+    done
+
+    echo "Concatenating board PDFs"
+    mv $OUTDIR/$IN.pdf $OUTDIR/$IN.tmp
+    pdfunite $OUTDIR/$IN.tmp/*.pdf $OUTDIR/$IN.pdf
+    rm -rf $OUTDIR/$IN.tmp
+
+    #  -----------
+    # | 3D Export |
+    #  -----------
+
+    echo "Exporting board step file"
+    rm -rf $OUTDIR/$IN.step
+    kicad-cli pcb export step \
+        -o $OUTDIR/$IN.step \
+        $IN
+
+    echo "Converting step to 3mf"
+    rm -rf $OUTDIR/$IN.3mf
+    prusa-slicer --export-3mf $OUTDIR/$IN.step
+
+    echo "Deleting step file"
+    rm -rf $OUTDIR/$IN.step
+done

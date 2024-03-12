@@ -36,9 +36,9 @@ cp -r ../hardware/plot src
 echo "Generating plot includes"
 rm -rf src/inc_dispensy_sch.md
 echo "<script src=\"js/svg-pan-zoom.js\" charset=\"UTF-8\"></script>" >> src/inc_dispensy_sch.md
-for f in `ls src/plot/dispensy_sch.svg/*.svg | sort -r`; do
+for f in `ls src/plot/dispensy.kicad_sch.svg/*.svg | sort -r`; do
     file=`echo $f | sed 's:src/:./:g'`
-    name=`echo $f | sed 's:src/plot/dispensy_sch.svg/::g' | sed 's:.svg::g'`
+    name=`echo $f | sed 's:src/plot/dispensy.kicad_sch.svg/::g' | sed 's:.svg::g'`
     echo $name
     echo "<h2>$name</h2>" >> src/inc_dispensy_sch.md
     echo "<div style=\"background-color: white; border: 1px solid black;\">" >> src/inc_dispensy_sch.md
