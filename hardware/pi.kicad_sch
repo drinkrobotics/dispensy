@@ -6,7 +6,7 @@
 	(paper "A4")
 	(title_block
 		(title "Pi RP2040 MCU")
-		(date "2024-02-05")
+		(date "2024-04-06")
 		(rev "1")
 		(company "DrinkRobotics")
 		(comment 1 "https://git.xythobuz.de/thomas/Dispensy")
@@ -1058,152 +1058,6 @@
 						)
 					)
 					(number "2"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-			)
-		)
-		(symbol "jlc:22025403P00CKMT"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "H"
-				(at 0 1.27 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "22025403P00CKMT"
-				(at 0 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "jlc_footprints:HDR-TH_3P-P2.54-V-F"
-				(at 0 -10.16 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://item.szlcsc.com/562471.html"
-				(at -2.286 0.127 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "LCSC" "C146690"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "C146690"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "22025403P00CKMT_0_1"
-				(rectangle
-					(start -1.27 5.08)
-					(end 3.81 -5.08)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(circle
-					(center 0 3.81)
-					(radius 0.381)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin unspecified line
-					(at -3.81 2.54 0)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -3.81 0 0)
-					(length 2.54)
-					(name "2"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -3.81 -2.54 0)
-					(length 2.54)
-					(name "3"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "3"
 						(effects
 							(font
 								(size 1 1)
@@ -6927,6 +6781,152 @@
 				)
 			)
 		)
+		(symbol "jlc:XY300V-A-5_0-3P"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "XY300V-A-5_0-3P"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "jlc_footprints:CONN-TH_XY300V-A-5.0-3P"
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://item.szlcsc.com/943867.html?ref=editor&logined=true"
+				(at -2.286 0.127 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC" "C880594"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "C880594"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "XY300V-A-5_0-3P_0_1"
+				(rectangle
+					(start -2.54 5.08)
+					(end 2.54 -5.08)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(circle
+					(center -1.27 3.81)
+					(radius 0.381)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 2.54 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 -2.54 0)
+					(length 2.54)
+					(name "3"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "power:+1V1"
 			(power)
 			(pin_names
@@ -12581,25 +12581,6 @@
 		)
 		(uuid a375f22e-7f29-4277-92de-002102742f6c)
 	)
-	(text_box "TODO:\n- Test Points"
-		(exclude_from_sim no)
-		(at 157.48 166.37 0)
-		(size 15.24 5.08)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left top)
-		)
-		(uuid "bfbd5047-9b6c-47ad-b44d-ef9bebe8d717")
-	)
 	(text_box "5V Power Supply"
 		(exclude_from_sim no)
 		(at 92.71 147.32 0)
@@ -15169,90 +15150,6 @@
 			(project "dispensy"
 				(path "/a50b51f9-900f-4bbb-8934-4acbc429c37b/f8ce2893-59d6-4502-b3c7-412c7467c1ef"
 					(reference "#PWR075")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "jlc:22025403P00CKMT")
-		(at 67.31 121.92 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "276bcfa5-f921-4e41-b920-f313ad86171a")
-		(property "Reference" "H7"
-			(at 71.755 121.2763 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "WS2812"
-			(at 71.755 123.1973 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "jlc_footprints:HDR-TH_3P-P2.54-V-F"
-			(at 67.31 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://item.szlcsc.com/562471.html"
-			(at 65.024 121.793 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 67.31 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C146690"
-			(at 67.31 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "5f48d945-623c-424c-891b-73c94f8d4c35")
-		)
-		(pin "2"
-			(uuid "59072cbe-9f1a-45ea-a114-2a87db7f4e8a")
-		)
-		(pin "3"
-			(uuid "667b35be-78c4-4182-8b84-fb0a28263c66")
-		)
-		(instances
-			(project "dispensy"
-				(path "/a50b51f9-900f-4bbb-8934-4acbc429c37b/f8ce2893-59d6-4502-b3c7-412c7467c1ef"
-					(reference "H7")
 					(unit 1)
 				)
 			)
@@ -18184,6 +18081,90 @@
 			(project "dispensy"
 				(path "/a50b51f9-900f-4bbb-8934-4acbc429c37b/f8ce2893-59d6-4502-b3c7-412c7467c1ef"
 					(reference "#PWR054")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "jlc:XY300V-A-5_0-3P")
+		(at 68.58 121.92 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "88377ed1-4c9c-477c-aa04-bcf5905047bb")
+		(property "Reference" "H7"
+			(at 71.755 120.7078 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "WS2812"
+			(at 71.755 123.1321 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "jlc_footprints:CONN-TH_XY300V-A-5.0-3P"
+			(at 68.58 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://item.szlcsc.com/943867.html?ref=editor&logined=true"
+			(at 66.294 121.793 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 68.58 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C880594"
+			(at 68.58 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "c4a97e7a-b34d-4f4d-b5fe-2d9f641d6e47")
+		)
+		(pin "1"
+			(uuid "54beefae-4b7e-4023-b682-df30499db941")
+		)
+		(pin "2"
+			(uuid "6f4337f6-f431-4fd8-9ba6-2a9e424e2edd")
+		)
+		(instances
+			(project "dispensy"
+				(path "/a50b51f9-900f-4bbb-8934-4acbc429c37b/f8ce2893-59d6-4502-b3c7-412c7467c1ef"
+					(reference "H7")
 					(unit 1)
 				)
 			)

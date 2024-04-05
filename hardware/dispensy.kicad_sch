@@ -6,7 +6,7 @@
 	(paper "A4")
 	(title_block
 		(title "Dispensy Mainboard")
-		(date "2024-02-05")
+		(date "2024-04-06")
 		(rev "1")
 		(company "DrinkRobotics")
 		(comment 1 "https://git.xythobuz.de/thomas/Dispensy")
@@ -3103,7 +3103,7 @@
 	)
 	(rectangle
 		(start 166.37 102.87)
-		(end 246.38 146.05)
+		(end 246.38 142.24)
 		(stroke
 			(width 0)
 			(type default)

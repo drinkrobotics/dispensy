@@ -6,7 +6,7 @@
 	(paper "A4")
 	(title_block
 		(title "LM2576 5V Power Supply")
-		(date "2024-02-05")
+		(date "2024-04-06")
 		(rev "1")
 		(company "DrinkRobotics")
 		(comment 1 "https://git.xythobuz.de/thomas/Dispensy")

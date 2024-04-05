@@ -62,6 +62,7 @@ JLC2KiCadLib \
     C2937625 `# Straight Square Pins 2.54mm 3P` \
     C234182  `# Straight Square Pins 2.54mm 2P` \
     C146690  `# Female Header 2.54mm 3P` \
+    C350310  `# Female Header 2.54mm 4P` \
     C40877   `# Female Header 2.54mm 6P` \
     C144481  `# 60.4Ω 1206 250mW ±1%` \
     C697422  `# 47nF 0402 50V Ceramic Capacitor` \
@@ -76,6 +77,7 @@ JLC2KiCadLib \
     C496132  `# 1x4P Barrier Block 7.62mm 20A 300V` \
     C347222  `# AMS1117-3.3 3.3V 1A LDO` \
     C557648  `# 1x2P 10A 300V 5mm Screw terminal` \
+    C880594  `# 1x3P 10A 300V 5mm Screw terminal` \
     C2982285 `# ASMD1812-350-16V 16V 3.5A/6A Resettable Fuse` \
     C84264   `# LED Green 0603` \
     C881044  `# 147kΩ 0402 62.5mW ±1%` \
