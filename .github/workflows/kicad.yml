@@ -42,9 +42,12 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Checkout repo submodules
+        run: git submodule update --init
+
       - name: Install dependencies
         run: |
-          sudo add-apt-repository --yes ppa:kicad/kicad-7.0-releases
+          sudo add-apt-repository --yes ppa:kicad/kicad-8.0-releases
           sudo apt update
           sudo apt install -y --install-recommends kicad
           sudo apt-get install -y zip
