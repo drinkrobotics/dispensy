@@ -74,6 +74,7 @@ JLC2KiCadLib \
     C497903  `# Inductor 100uH ±20% 2A` \
     C249838  `# 100uF 80V Electrolytic Capacitor` \
     C310843  `# 1000uF 16V Electrolytic Capacitor` \
+    C280408  `# 1000uF 16V Electrolytic Capacitor` \
     C496132  `# 1x4P Barrier Block 7.62mm 20A 300V` \
     C347222  `# AMS1117-3.3 3.3V 1A LDO` \
     C557648  `# 1x2P 10A 300V 5mm Screw terminal` \
