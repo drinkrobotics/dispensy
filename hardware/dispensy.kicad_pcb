@@ -8702,7 +8702,7 @@
 			(start 7.500025 5.3)
 			(end -7.500025 5.3)
 			(stroke
-				(width 0.254001)
+				(width 0.254)
 				(type solid)
 			)
 			(layer "F.SilkS")
@@ -8712,7 +8712,7 @@
 			(start 7.500025 -3.7)
 			(end 7.500025 5.3)
 			(stroke
-				(width 0.254001)
+				(width 0.254)
 				(type solid)
 			)
 			(layer "F.SilkS")
@@ -8722,7 +8722,7 @@
 			(start 7.500025 -3.7)
 			(end -7.500025 -3.7)
 			(stroke
-				(width 0.254001)
+				(width 0.254)
 				(type solid)
 			)
 			(layer "F.SilkS")
@@ -8732,7 +8732,7 @@
 			(start 5.723343 -2.515748)
 			(end 5.723343 -3.7)
 			(stroke
-				(width 0.254001)
+				(width 0.254)
 				(type solid)
 			)
 			(layer "F.SilkS")
@@ -8742,7 +8742,7 @@
 			(start 4.289992 -2.515748)
 			(end 4.289992 -3.7)
 			(stroke
-				(width 0.254001)
+				(width 0.254)
 				(type solid)
 			)
 			(layer "F.SilkS")
@@ -8752,7 +8752,7 @@
 			(start 0.734036 -2.515748)
 			(end 0.734036 -3.7)
 			(stroke
-				(width 0.254001)
+				(width 0.254)
 				(type solid)
 			)
 			(layer "F.SilkS")
@@ -8762,7 +8762,7 @@
 			(start -0.699314 -2.515748)
 			(end -0.699314 -3.7)
 			(stroke
-				(width 0.254001)
+				(width 0.254)
 				(type solid)
 			)
 			(layer "F.SilkS")
@@ -8772,7 +8772,7 @@
 			(start -4.291567 -2.515748)
 			(end -4.291567 -3.7)
 			(stroke
-				(width 0.254001)
+				(width 0.254)
 				(type solid)
 			)
 			(layer "F.SilkS")
@@ -8782,7 +8782,7 @@
 			(start -5.724867 -2.515748)
 			(end -5.724867 -3.7)
 			(stroke
-				(width 0.254001)
+				(width 0.254)
 				(type solid)
 			)
 			(layer "F.SilkS")
@@ -8792,7 +8792,7 @@
 			(start -7.500025 2.564262)
 			(end 7.500025 2.564262)
 			(stroke
-				(width 0.254001)
+				(width 0.254)
 				(type solid)
 			)
 			(layer "F.SilkS")
@@ -8802,7 +8802,7 @@
 			(start -7.500025 -2.515748)
 			(end 7.500025 -2.515748)
 			(stroke
-				(width 0.254001)
+				(width 0.254)
 				(type solid)
 			)
 			(layer "F.SilkS")
@@ -8812,7 +8812,7 @@
 			(start -7.500025 -3.7)
 			(end -7.500025 5.3)
 			(stroke
-				(width 0.254001)
+				(width 0.254)
 				(type solid)
 			)
 			(layer "F.SilkS")
@@ -14215,7 +14215,7 @@
 		)
 		(fp_arc
 			(start 1.390018 0.400203)
-			(mid 1.299267 0.619284)
+			(mid 1.299267 0.61928)
 			(end 1.080188 0.710033)
 			(stroke
 				(width 0.254)
@@ -15995,7 +15995,7 @@
 		)
 		(fp_arc
 			(start 1.390018 0.400203)
-			(mid 1.299267 0.619284)
+			(mid 1.299267 0.61928)
 			(end 1.080188 0.710033)
 			(stroke
 				(width 0.254)
@@ -21050,6 +21050,19 @@
 				)
 			)
 		)
+		(property "LCSC" "C350310"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f7106a5a-a9a3-4586-b5cc-a5ab1577ba30")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "extern:SSD1306*")
 		(path "/2ae5702b-de7e-4727-aba1-09aa8e03487a")
 		(sheetname "Root")
@@ -21378,6 +21391,17 @@
 			(pinfunction "SDA")
 			(pintype "bidirectional")
 			(uuid "541cb6ad-9135-4035-99d8-b7f724fb36e2")
+		)
+		(model "${KIPRJMOD}/jlc_lib/jlc_footprints/packages3d/HDR-TH_4P-P2.54-V-F.wrl"
+			(offset
+				(xyz 13 24.5 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
 		)
 	)
 	(footprint "jlc_footprints:C0402"
