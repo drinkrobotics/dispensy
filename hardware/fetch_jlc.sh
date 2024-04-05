@@ -47,6 +47,7 @@ JLC2KiCadLib \
     C194472  `# LM2576S-5.0/TR Step Down` \
     C134092  `# Molex USB-C Socket` \
     C386740  `# USB-A Female` \
+    C720525  `# USB-A Female` \
     C148313  `# ABM3-12.000MHZ-D2Y-T 12MHz Ceramic Resonator` \
     C279981  `# 1kΩ 0402 62.5mW ±1%` \
     C140675  `# 27pF 0402 50V Ceramic Capacitor` \
