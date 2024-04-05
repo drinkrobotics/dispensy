@@ -50,35 +50,4 @@ You can also view the [Main-Board PCB layout as PDF](./plot/dispensy.kicad_pcb.p
 
 ## 3D PCB Model
 
-<p>Status: "<span id="3d_info">Preparing 3D model...</span>"</p>
-<div id="3d_viewer" style="width: 100%; height: 100%; background-color: white; border: 1px solid black;"></div>
-<script type="module">
-    var view = document.getElementById('3d_viewer');
-    view.style.height = (view.clientWidth * 0.707) + "px";
-    var info = document.getElementById('3d_info');
-    import * as View from './js/modelview.js';
-    View.init(view, info);
-    const file = './plot/dispensy.3mf';
-    var xhttp = new XMLHttpRequest();
-    xhttp.responseType = 'arraybuffer';
-    xhttp.onload = function() {
-        if (this.status != 200) {
-            info.textContent = "Download of " + file + " failed: " + this.status + " " + this.statusText;
-            return;
-        }
-        info.textContent = "Downloaded: " + file;
-        var file_parts = file.split(".");
-        var ext = file_parts.pop().toLowerCase();
-        if (ext == "zip") {
-            ext = file_parts.pop().toLowerCase();
-        }
-        info.textContent = "Loaded file with extension: " + ext;
-        var model_data = this.response;
-        View.view(ext, model_data);
-    };
-    info.textContent = "Fetching: " + file;
-    xhttp.open("GET", file);
-    xhttp.send();
-</script>
-
-[Direct link to this file](./plot/dispensy.3mf).
+{{#include inc_dispensy.kicad_pcb.md}}

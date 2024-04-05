@@ -72,7 +72,7 @@ do
         echo "Exporting board $TYPE"
         kicad-cli pcb export $TYPE \
             -t "KiCad Classic"  \
-            -l $LAYER_F,$LAYER_B \
+            -l $LAYER_B,$LAYER_F \
             -o $OUTDIR/$IN.$TYPE/0_both.$TYPE \
             $IN
         echo
@@ -103,16 +103,8 @@ do
     # | 3D Export |
     #  -----------
 
-    echo "Exporting board step file"
-    rm -rf $OUTDIR/$IN.step
-    kicad-cli pcb export step \
-        -o $OUTDIR/$IN.step \
+    echo "Exporting board 3D"
+    kicad-cli pcb export vrml \
+        -o $OUTDIR/$IN.wrl \
         $IN
-
-    echo "Converting step to 3mf"
-    rm -rf $OUTDIR/$IN.3mf
-    prusa-slicer --export-3mf $OUTDIR/$IN.step
-
-    echo "Deleting step file"
-    rm -rf $OUTDIR/$IN.step
 done

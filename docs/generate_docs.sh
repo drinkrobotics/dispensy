@@ -26,41 +26,87 @@
 # | source.                                                                      |
 #  ------------------------------------------------------------------------------
 
+INSCH="../hardware/dispensy.kicad_sch"
+INPCB="../hardware/dispensy.kicad_pcb"
+
 cd "$(dirname "$0")"
 
-#echo "Generating plots"
+if [ "$1" = "build" ] ; then
+    echo "Generating plots"
+    ../hardware/generate_plot.sh
+    echo
+
+    echo "Generating fab"
+    ../hardware/generate_fab.sh
+    echo
+fi
+
 rm -rf src/plot
-#../hardware/generate_plot.sh
 cp -r ../hardware/plot src
 
-echo "Generating plot includes"
-rm -rf src/inc_dispensy_sch.md
-echo "<script src=\"js/svg-pan-zoom.js\" charset=\"UTF-8\"></script>" >> src/inc_dispensy_sch.md
-for f in `ls src/plot/dispensy.kicad_sch.svg/*.svg | sort -r`; do
-    file=`echo $f | sed 's:src/:./:g'`
-    name=`echo $f | sed 's:src/plot/dispensy.kicad_sch.svg/::g' | sed 's:.svg::g'`
-    echo $name
-    echo "<h2>$name</h2>" >> src/inc_dispensy_sch.md
-    echo "<div style=\"background-color: white; border: 1px solid black;\">" >> src/inc_dispensy_sch.md
-    echo "<embed type=\"image/svg+xml\" src=\"$file\" id=\"pz_$name\" style=\"width:100%;\"/>" >> src/inc_dispensy_sch.md
-    echo "<script>" >> src/inc_dispensy_sch.md
-    echo "document.getElementById('pz_$name').addEventListener('load', function(){" >> src/inc_dispensy_sch.md
-    echo "svgPanZoom(document.getElementById('pz_$name'), {controlIconsEnabled: true, minZoom: 1.0});" >> src/inc_dispensy_sch.md
-    echo "})" >> src/inc_dispensy_sch.md
-    echo "</script>" >> src/inc_dispensy_sch.md
-    echo "</div>" >> src/inc_dispensy_sch.md
-    echo >> src/inc_dispensy_sch.md
-    echo "[Direct link to \`$name\`]($file)." >> src/inc_dispensy_sch.md
-    echo >> src/inc_dispensy_sch.md
+for path in $INSCH
+do
+    IN=`echo $path | sed "s:../hardware/::g"`
+    o="src/inc_$IN.md"
+    echo "Include for $IN at $o"
+
+    rm -rf $o
+    echo "<script src=\"js/svg-pan-zoom.js\" charset=\"UTF-8\"></script>" >> $o
+
+    for f in `ls src/plot/$IN.svg/*.svg | sort -r`; do
+        file=`echo $f | sed 's:src/:./:g'`
+        name=`echo $f | sed "s:src/plot/$IN.svg/::g" | sed 's:.svg::g'`
+        echo "Sheet at $name"
+
+        echo "<h2>$name</h2>" >> $o
+        echo "<div style=\"background-color: white; border: 1px solid black;\">" >> $o
+        echo "<embed type=\"image/svg+xml\" src=\"$file\" id=\"pz_$name\" style=\"width:100%;\"/>" >> $o
+        echo "<script>" >> $o
+        echo "document.getElementById('pz_$name').addEventListener('load', function(){" >> $o
+        echo "svgPanZoom(document.getElementById('pz_$name'), {controlIconsEnabled: true, minZoom: 1.0});" >> $o
+        echo "})" >> $o
+        echo "</script>" >> $o
+        echo "</div>" >> $o
+        echo >> $o
+        echo "[Direct link to \`$name\`]($file)." >> $o
+        echo >> $o
+    done
+
+    echo
 done
 
-echo "Preparing modelview dependencies"
-cd modelview
-sed -i 's/info\.inner/info_elem\.inner/g' modelview.js
-./fetch_deps.sh
-cd ..
-rm -rf src/js/deps
-cp -r modelview/deps src/js
+plot_3d() {
+    echo '<script type="importmap">' >> $1
+    echo '    {' >> $1
+    echo '        "imports": {' >> $1
+    echo '            "three": "https://cdn.jsdelivr.net/npm/three@0.163.0/build/three.module.js",' >> $1
+    echo '            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.163.0/examples/jsm/"' >> $1
+    echo '        }' >> $1
+    echo '    }' >> $1
+    echo '</script>' >> $1
+    echo "<p>Status: \"<span id=\"3d_info_$2\">Preparing 3D model...</span>\"</p>" >> $1
+    echo "<div id=\"3d_viewer_$2\" style=\"width: 100%; height: 100%; background-color: white; border: 1px solid black; position: relative;\"></div>" >> $1
+    echo '<script type="module">' >> $1
+    echo "    var info = document.getElementById(\"3d_info_$2\");" >> $1
+    echo "    var view = document.getElementById(\"3d_viewer_$2\");" >> $1
+    echo '    view.style.height = Math.floor(view.clientWidth * 0.707) + "px";' >> $1
+    echo '    import { init_3d } from "./js/3d.js";' >> $1
+    echo "    init_3d(\"$3\", view, info, view.clientWidth, view.clientHeight);" >> $1
+    echo '</script>' >> $1
+}
+
+for path in $INPCB
+do
+    IN=`echo $path | sed "s:../hardware/::g"`
+    o="src/inc_$IN.md"
+    file="plot/$IN.wrl"
+    name=`echo $file | sed "s:plot/::g" | sed 's:.wrl::g'`
+    echo "Include for $IN at $o, $file, $name"
+    rm -rf $o
+
+    plot_3d $o $name $file
+done
+echo
 
 echo "Generating docs"
 if [ "$1" = "serve" ] ; then
