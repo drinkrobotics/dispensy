@@ -30,16 +30,16 @@ jobs:
         run: git submodule update --init
 
       - name: Checkout pico-sdk submodules
-        working-directory: ${{github.workspace}}/repo/pico-sdk
+        working-directory: ${{github.workspace}}/repo/firmware/pico-sdk
         run: git submodule update --init
 
       - name: Create Build Environment
-        working-directory: ${{github.workspace}}/repo
-        run:  cmake -E make_directory ${{github.workspace}}/repo/build
+        working-directory: ${{github.workspace}}/repo/firmware
+        run:  cmake -E make_directory ${{github.workspace}}/repo/firmware/build
 
       - name: Configure CMake
         shell: bash
-        working-directory: ${{github.workspace}}/repo/build
+        working-directory: ${{github.workspace}}/repo/firmware/build
         run: cmake .. -DCMAKE_BUILD_TYPE=$BUILD_TYPE
 
       - name: Get core count
@@ -47,7 +47,7 @@ jobs:
         run : cat /proc/cpuinfo  | grep processor | wc -l
 
       - name: Build
-        working-directory: ${{github.workspace}}/repo/build
+        working-directory: ${{github.workspace}}/repo/firmware/build
         shell: bash
         run: cmake --build . --config $BUILD_TYPE --parallel $(nproc)
 
@@ -55,11 +55,11 @@ jobs:
         uses: actions/upload-artifact@v4.0.0
         with:
           name: dispensy.uf2
-          path: ${{github.workspace}}/repo/build/dispensy.uf2
+          path: ${{github.workspace}}/repo/firmware/build/dispensy.uf2
           if-no-files-found: error
 
       - name: Upload release files
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v1
         with:
-          files: ${{github.workspace}}/repo/build/dispensy.uf2
+          files: ${{github.workspace}}/repo/firmware/build/dispensy.uf2
