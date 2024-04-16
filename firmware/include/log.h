@@ -1,7 +1,7 @@
 /*
  * log.h
  *
- * Copyright (c) 2022 - 2023 Thomas Buck (thomas@xythobuz.de)
+ * Copyright (c) 2022 - 2024 Thomas Buck (thomas@xythobuz.de)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,17 +26,11 @@
 
 // for output that is stored in the debug log.
 // will be re-played from buffer when terminal connects
-#ifndef PICOWOTA
 #define debug(fmt, ...) debug_log(true, \
         "%08" PRIu32 " %s:%d: " fmt "\r\n", \
         to_ms_since_boot(get_absolute_time()), \
         __func__, __LINE__, \
         ##__VA_ARGS__)
-#else // PICOWOTA
-#define debug(fmt, ...) debug_log(true, \
-        fmt "\r\n", \
-        ##__VA_ARGS__)
-#endif // PICOWOTA
 
 // for interactive output. is not stored or re-played.
 #define print(fmt, ...) debug_log(false, fmt, ##__VA_ARGS__)
@@ -47,8 +41,6 @@ void debug_wait_input(const char *format, ...) __attribute__((format(printf, 1, 
 void debug_log_va(bool log, const char *format, va_list args);
 
 void log_dump_to_usb(void);
-void log_dump_to_uart(void);
-void log_dump_to_disk(void);
 
 void debug_handle_input(const void *buff, size_t len);
 

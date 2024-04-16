@@ -1,7 +1,7 @@
 /*
  * Extended from TinyUSB example code.
  *
- * Copyright (c) 2022 - 2023 Thomas Buck (thomas@xythobuz.de)
+ * Copyright (c) 2022 - 2024 Thomas Buck (thomas@xythobuz.de)
  *
  * The MIT License (MIT)
  *

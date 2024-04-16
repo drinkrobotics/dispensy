@@ -1,7 +1,7 @@
 /*
  * config.h
  *
- * Copyright (c) 2022 - 2023 Thomas Buck (thomas@xythobuz.de)
+ * Copyright (c) 2022 - 2024 Thomas Buck (thomas@xythobuz.de)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,38 +20,14 @@
 #define __CONFIG_H__
 
 #define APP_VERSION_MAJOR 0
-#define APP_VERSION_MINOR 3
+#define APP_VERSION_MINOR 1
 
-#define MENU_PREFER_VOLCANO
-//#define MENU_PREFER_CRAFTY
-
-#define VOLCANO_AUTO_CONNECT_TIMEOUT_MS 2000
-#define VOLCANO_AUTO_CONNECT_WITHIN_MS 10000
-
-#define COUNTRY_CODE CYW43_COUNTRY_GERMANY
-
-#ifdef NDEBUG
-// Release build
-#define AUTO_MOUNT_MASS_STORAGE
-#define AUTO_LOG_ON_MASS_STORAGE
-#endif // NDEBUG
-
-#define WATCHDOG_PERIOD_MS 1000
-#define FLASH_LOCK_TIMEOUT_MS 500
+#define WATCHDOG_PERIOD_MS 10
 
 // ASCII 0x18 = CAN (cancel)
 #define ENTER_BOOTLOADER_MAGIC 0x18
 
 //#define DISABLE_CDC_DTR_CHECK
 #define DEBOUNCE_DELAY_MS 5
-
-#define SERIAL_WRITES_BLOCK_WHEN_BUFFER_FULL
-
-// TODO needs to be the same as in pack_data.sh
-#define DISK_BLOCK_SIZE 512
-#define DISK_BLOCK_COUNT (256 + 128) // 384 * 512 = 196608
-
-#define TEST_VOLCANO_AUTO_CONNECT "EA:06:75:A7:D1:15 1"
-#define TEST_CRAFTY_AUTO_CONNECT "60:B6:E1:BB:61:36 0"
 
 #endif // __CONFIG_H__

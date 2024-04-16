@@ -10,7 +10,7 @@ Check out the [Dispensy documentation](https://drinkrobotics.github.io/dispensy/
 
 ## License
 
-This project is licensed under the [CERN Open Hardware Licence Version 2 - Strongly Reciprocal (CERN-OHL-S-2.0+)](https://ohwr.org/cern_ohl_s_v2.txt) or any later version.
+This hardware of this project is licensed under the [CERN Open Hardware Licence Version 2 - Strongly Reciprocal (CERN-OHL-S-2.0+)](https://ohwr.org/cern_ohl_s_v2.txt) or any later version.
 
 The docs are built using [mdbook](https://github.com/rust-lang/mdBook), licensed as `MPL-2.0`.
 The PCB SVG files in the documentation are displayed using [svg-pan-zoom](https://github.com/bumbu/svg-pan-zoom), licensed as `BSD-2-Clause`.
@@ -41,7 +41,19 @@ Please also take a look at the `README.md` files in the subfolders of this proje
     | source.                                                                      |
      ------------------------------------------------------------------------------
 
-This is the SPDX header for this project:
+The firmware of this project is licensed as GPLv3.
+I initially adapted it from my own [Trackball](https://git.xythobuz.de/thomas/Trackball) and [Volcano Remote](https://git.xythobuz.de/thomas/sb-py) projects.
+It uses the [Pi Pico SDK](https://github.com/raspberrypi/pico-sdk), licensed as BSD 3-clause, and therefore also [TinyUSB](https://github.com/hathach/tinyusb), licensed under the MIT license.
+Some code is adapted from the TinyUSB examples.
 
-    SPDX-FileCopyrightText: 2023 - 2024 Thomas Buck <thomas@xythobuz.de>
-    SPDX-License-Identifier: CERN-OHL-S-2.0+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    See <http://www.gnu.org/licenses/>.

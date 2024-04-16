@@ -1,7 +1,7 @@
 /*
  * log.c
  *
- * Copyright (c) 2022 - 2023 Thomas Buck (thomas@xythobuz.de)
+ * Copyright (c) 2022 - 2024 Thomas Buck (thomas@xythobuz.de)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,9 +17,6 @@
  */
 
 #include <stdio.h>
-#include <string.h>
-
-#include "hardware/watchdog.h"
 
 #include "config.h"
 #include "main.h"

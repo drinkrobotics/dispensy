@@ -1,7 +1,7 @@
 /*
  * util.h
  *
- * Copyright (c) 2022 - 2023 Thomas Buck (thomas@xythobuz.de)
+ * Copyright (c) 2022 - 2024 Thomas Buck (thomas@xythobuz.de)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,11 +18,6 @@
 
 #ifndef __UTIL_H__
 #define __UTIL_H__
-
-void heartbeat_init(void);
-void heartbeat_run(void);
-
-int32_t convert_two_complement(int32_t b);
 
 bool str_startswith(const char *str, const char *start);
 

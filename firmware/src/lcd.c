@@ -1,7 +1,7 @@
 /*
  * lcd.c
  *
- * Copyright (c) 2023 Thomas Buck (thomas@xythobuz.de)
+ * Copyright (c) 2023 - 2024 Thomas Buck (thomas@xythobuz.de)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,8 +15,6 @@
  *
  * See <http://www.gnu.org/licenses/>.
  */
-
-#include "pico/stdlib.h"
 
 #include "config.h"
 #include "log.h"

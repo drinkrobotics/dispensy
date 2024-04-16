@@ -1,7 +1,7 @@
 /*
  * util.c
  *
- * Copyright (c) 2022 - 2023 Thomas Buck (thomas@xythobuz.de)
+ * Copyright (c) 2022 - 2024 Thomas Buck (thomas@xythobuz.de)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,46 +17,12 @@
  */
 
 #include <string.h>
-#include "pico/stdlib.h"
 #include "pico/bootrom.h"
 #include "hardware/watchdog.h"
-
-#ifdef CYW43_WL_GPIO_LED_PIN
-#include "pico/cyw43_arch.h"
-#endif // CYW43_WL_GPIO_LED_PIN
 
 #include "config.h"
 #include "log.h"
 #include "util.h"
-
-#define HEARTBEAT_INTERVAL_MS 500
-
-void heartbeat_init(void) {
-#ifdef PICO_DEFAULT_LED_PIN
-    gpio_init(PICO_DEFAULT_LED_PIN);
-    gpio_set_dir(PICO_DEFAULT_LED_PIN, GPIO_OUT);
-    gpio_put(PICO_DEFAULT_LED_PIN, 1);
-#endif // PICO_DEFAULT_LED_PIN
-#ifdef CYW43_WL_GPIO_LED_PIN
-    cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1);
-#endif // CYW43_WL_GPIO_LED_PIN
-}
-
-void heartbeat_run(void) {
-#if defined(PICO_DEFAULT_LED_PIN) || defined(CYW43_WL_GPIO_LED_PIN)
-    static uint32_t last_heartbeat = 0;
-    uint32_t now = to_ms_since_boot(get_absolute_time());
-    if (now >= (last_heartbeat + HEARTBEAT_INTERVAL_MS)) {
-        last_heartbeat = now;
-#ifdef PICO_DEFAULT_LED_PIN
-        gpio_xor_mask(1 << PICO_DEFAULT_LED_PIN);
-#endif // PICO_DEFAULT_LED_PIN
-#ifdef CYW43_WL_GPIO_LED_PIN
-        cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, !cyw43_arch_gpio_get(CYW43_WL_GPIO_LED_PIN));
-#endif // CYW43_WL_GPIO_LED_PIN
-    }
-#endif // defined(PICO_DEFAULT_LED_PIN) || defined(CYW43_WL_GPIO_LED_PIN)
-}
 
 bool str_startswith(const char *str, const char *start) {
     size_t l = strlen(start);
@@ -64,13 +30,6 @@ bool str_startswith(const char *str, const char *start) {
         return false;
     }
     return (strncmp(str, start, l) == 0);
-}
-
-int32_t convert_two_complement(int32_t b) {
-    if (b & 0x8000) {
-        b = -1 * ((b ^ 0xffff) + 1);
-    }
-    return b;
 }
 
 void reset_to_bootloader(void) {
