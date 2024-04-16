@@ -21,6 +21,7 @@
 #include "hardware/watchdog.h"
 
 #include "config.h"
+#include "lcd.h"
 #include "log.h"
 #include "util.h"
 
@@ -33,11 +34,8 @@ bool str_startswith(const char *str, const char *start) {
 }
 
 void reset_to_bootloader(void) {
-#ifdef PICO_DEFAULT_LED_PIN
-    reset_usb_boot(1 << PICO_DEFAULT_LED_PIN, 0);
-#else // ! PICO_DEFAULT_LED_PIN
+    lcd_bye();
     reset_usb_boot(0, 0);
-#endif // PICO_DEFAULT_LED_PIN
 }
 
 void reset_to_main(void) {

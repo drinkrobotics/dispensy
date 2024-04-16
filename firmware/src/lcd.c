@@ -16,6 +16,7 @@
  * See <http://www.gnu.org/licenses/>.
  */
 
+#include <stdio.h>
 #include <string.h>
 
 #include "hardware/i2c.h"
@@ -23,6 +24,7 @@
 #include "git.h"
 
 #include "config.h"
+#include "hw_id.h"
 #include "log.h"
 #include "lcd.h"
 
@@ -69,20 +71,31 @@ void lcd_splash_version(void) {
 
     if (git_IsPopulated()) {
         const char *hash = git_CommitSHA1();
-        char short_hash[6 + 7 + 1] = {0};
+        char short_hash[6 + 7 + 6 + 1] = {0};
         memcpy(short_hash, "Hash: ", 6);
         memcpy(short_hash + 6, hash, 7);
+        if (git_AnyUncommittedChanges()) {
+            memcpy(short_hash + 6 + 7, " dirty", 6);
+        }
         ssd1306_draw_string(&lcd, 0, FONT_HEIGHT * 2 + 1 + (FONT_HEIGHT + 1) * 2, 1,
                             short_hash);
-
-        if (git_AnyUncommittedChanges()) {
-            ssd1306_draw_string(&lcd, 0, FONT_HEIGHT * 2 + 1 + (FONT_HEIGHT + 1) * 3, 1,
-                                "Repo has changes!");
-        }
     } else {
         ssd1306_draw_string(&lcd, 0, FONT_HEIGHT * 2 + 1 + (FONT_HEIGHT + 1) * 2, 1,
                             "No Git Repo");
     }
 
+    char hw_id_str[42] = {0};
+    snprintf(hw_id_str, sizeof(hw_id_str) - 1,
+             "HW type=%X id=%X", hw_type(), hw_id());
+    ssd1306_draw_string(&lcd, 0, FONT_HEIGHT * 2 + 1 + (FONT_HEIGHT + 1) * 3, 1,
+                        hw_id_str);
+
+    ssd1306_show(&lcd);
+}
+
+void lcd_bye(void) {
+    ssd1306_clear(&lcd);
+    ssd1306_draw_string(&lcd, 6, 5, 3, " Boot-");
+    ssd1306_draw_string(&lcd, 8, LCD_HEIGHT / 2 + 5, 3, "loader");
     ssd1306_show(&lcd);
 }

@@ -25,8 +25,7 @@
 #include "log.h"
 #include "util.h"
 #include "usb_cdc.h"
-#include "lcd.h"
-#include "main.h"
+#include "hw_id.h"
 #include "console.h"
 
 #define CNSL_BUFF_SIZE 64
@@ -81,12 +80,20 @@ static void cnsl_interpret(const char *line) {
         println("");
         println("  reset - reset back into this firmware");
         println("   \\x18 - reset to bootloader");
+        println("   type - print hardware type");
+        println("     id - print hardware ID");
         println("");
         println("Press Enter with no input to repeat last command.");
         println("Use repeat to continuously execute last command.");
         println("Stop this by calling repeat again.");
     } else if (strcmp(line, "reset") == 0) {
         reset_to_main();
+    } else if (strcmp(line, "type") == 0) {
+        hw_id_read();
+        debug("HW Type: %d", hw_type());
+    } else if (strcmp(line, "id") == 0) {
+        hw_id_read();
+        debug("HW ID: %d", hw_id());
     } else {
         println("unknown command \"%s\"", line);
     }

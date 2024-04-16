@@ -24,6 +24,7 @@
 #include "usb.h"
 #include "buttons.h"
 #include "lcd.h"
+#include "hw_id.h"
 #include "main.h"
 
 void main_loop_hw(void) {
@@ -35,7 +36,8 @@ int main(void) {
     watchdog_enable(WATCHDOG_PERIOD_MS, 1);
 
     // detect hardware type
-    // TODO
+    hw_id_init();
+    hw_id_read();
 
     // required for debug console
     cnsl_init();
@@ -46,7 +48,10 @@ int main(void) {
         debug("reset by watchdog");
     }
 
-    buttons_init();
+    debug("HW Type: %d", hw_type());
+    debug("HW ID: %d", hw_id());
+
+    //buttons_init();
     lcd_init();
     lcd_splash_version();
 
@@ -54,7 +59,7 @@ int main(void) {
 
     while (1) {
         main_loop_hw();
-        buttons_run();
+        //buttons_run();
         cnsl_run();
     }
 

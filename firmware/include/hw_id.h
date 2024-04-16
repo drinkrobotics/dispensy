@@ -1,7 +1,7 @@
 /*
- * lipo.h
+ * hw_id.h
  *
- * Copyright (c) 2023 - 2024 Thomas Buck (thomas@xythobuz.de)
+ * Copyright (c) 2022 - 2024 Thomas Buck (thomas@xythobuz.de)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,18 +16,19 @@
  * See <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __LCD_H__
-#define __LCD_H__
+#ifndef __HW_ID_H__
+#define __HW_ID_H__
 
-#define LCD_WIDTH 128
-#define LCD_HEIGHT 64
+#include "pico/stdlib.h"
 
-#define FONT_HEIGHT 8
-#define FONT_WIDTH 5
+enum hw_type {
+    HW_TYPE_MAINBOARD = 0,
+};
 
-void lcd_init(void);
+void hw_id_init(void);
+void hw_id_read(void);
 
-void lcd_splash_version(void);
-void lcd_bye(void);
+enum hw_type hw_type(void);
+uint hw_id(void);
 
-#endif // __LCD_H__
+#endif // __HW_ID_H__

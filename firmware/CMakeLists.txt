@@ -40,6 +40,7 @@ target_sources(dispensy PUBLIC
     ${CMAKE_CURRENT_LIST_DIR}/src/buttons.c
     ${CMAKE_CURRENT_LIST_DIR}/src/lcd.c
     ${CMAKE_CURRENT_LIST_DIR}/src/ring.c
+    ${CMAKE_CURRENT_LIST_DIR}/src/hw_id.c
 
     ${CMAKE_CURRENT_LIST_DIR}/pico-ssd1306/ssd1306.c
 )
