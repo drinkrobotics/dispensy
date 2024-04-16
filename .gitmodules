@@ -1,3 +1,6 @@
 [submodule "docs/svg-pan-zoom"]
 	path = docs/svg-pan-zoom
 	url = https://github.com/WebSVG/svg-pan-zoom
+[submodule "firmware/pico-sdk"]
+	path = firmware/pico-sdk
+	url = https://github.com/raspberrypi/pico-sdk
