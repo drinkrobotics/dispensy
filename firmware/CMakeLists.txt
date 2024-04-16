@@ -40,9 +40,12 @@ target_sources(dispensy PUBLIC
     ${CMAKE_CURRENT_LIST_DIR}/src/buttons.c
     ${CMAKE_CURRENT_LIST_DIR}/src/lcd.c
     ${CMAKE_CURRENT_LIST_DIR}/src/ring.c
+
+    ${CMAKE_CURRENT_LIST_DIR}/pico-ssd1306/ssd1306.c
 )
 
 target_include_directories(dispensy PUBLIC ${CMAKE_CURRENT_LIST_DIR}/include)
+target_include_directories(dispensy PUBLIC ${CMAKE_CURRENT_LIST_DIR}/pico-ssd1306)
 
 # enable generous warnings
 target_compile_options(dispensy PUBLIC
@@ -61,6 +64,14 @@ set_source_files_properties(pico-sdk/lib/btstack/src/classic/goep_client.c PROPE
 set_source_files_properties(pico-sdk/lib/btstack/src/classic/goep_server.c PROPERTIES COMPILE_FLAGS -Wno-unused-parameter)
 set_source_files_properties(pico-sdk/src/rp2_common/hardware_flash/flash.c PROPERTIES COMPILE_FLAGS -Wno-shadow)
 
+# repo meta data
+include(FetchContent)
+FetchContent_Declare(cmake_git_version_tracking
+    GIT_REPOSITORY https://github.com/andrew-hardin/cmake-git-version-tracking.git
+    GIT_TAG 6c0cb87edd029ddfb403a8e24577c144a03605a6
+)
+FetchContent_MakeAvailable(cmake_git_version_tracking)
+
 # pull in common dependencies
 target_link_libraries(dispensy
     pico_stdlib
@@ -69,7 +80,8 @@ target_link_libraries(dispensy
     tinyusb_board
     hardware_adc
     hardware_gpio
-    hardware_pwm
+    hardware_i2c
+    cmake_git_version_tracking
 )
 
 # fix for Errata RP2040-E5 (the fix requires use of GPIO 15)

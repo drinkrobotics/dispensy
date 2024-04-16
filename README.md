@@ -11,6 +11,7 @@ Check out the [Dispensy documentation](https://drinkrobotics.github.io/dispensy/
 ## License
 
 This hardware of this project is licensed under the [CERN Open Hardware Licence Version 2 - Strongly Reciprocal (CERN-OHL-S-2.0+)](https://ohwr.org/cern_ohl_s_v2.txt) or any later version.
+The SSD1306 footprint is from [KiCAD Rookie](https://kicadrookie.blogspot.com/2022/06/ssd1306-i2c-096in-oled-display-kicad_86.html).
 
 The docs are built using [mdbook](https://github.com/rust-lang/mdBook), licensed as `MPL-2.0`.
 The PCB SVG files in the documentation are displayed using [svg-pan-zoom](https://github.com/bumbu/svg-pan-zoom), licensed as `BSD-2-Clause`.
@@ -45,6 +46,8 @@ The firmware of this project is licensed as GPLv3.
 I initially adapted it from my own [Trackball](https://git.xythobuz.de/thomas/Trackball) and [Volcano Remote](https://git.xythobuz.de/thomas/sb-py) projects.
 It uses the [Pi Pico SDK](https://github.com/raspberrypi/pico-sdk), licensed as BSD 3-clause, and therefore also [TinyUSB](https://github.com/hathach/tinyusb), licensed under the MIT license.
 Some code is adapted from the TinyUSB examples.
+To control the OLED display, [pico-ssd1306](https://github.com/daschr/pico-ssd1306) is used, licensed under the MIT license.
+Repo metadata is embedded into the project using [cmake-git-version-tracking](https://github.com/andrew-hardin/cmake-git-version-tracking), licensed under the MIT license.
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by

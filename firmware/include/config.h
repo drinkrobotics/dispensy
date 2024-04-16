@@ -19,8 +19,8 @@
 #ifndef __CONFIG_H__
 #define __CONFIG_H__
 
-#define APP_VERSION_MAJOR 0
-#define APP_VERSION_MINOR 1
+#define VERSION_MAJOR 0
+#define VERSION_MINOR 1
 
 #define WATCHDOG_PERIOD_MS 10
 
@@ -29,5 +29,12 @@
 
 //#define DISABLE_CDC_DTR_CHECK
 #define DEBOUNCE_DELAY_MS 5
+
+// ----------------------------------------------------------------------------
+
+#define STR_HELPER(x) #x
+#define STR(x) STR_HELPER(x)
+
+#define VERSION_STR "V" STR(VERSION_MAJOR) "." STR(VERSION_MINOR)
 
 #endif // __CONFIG_H__

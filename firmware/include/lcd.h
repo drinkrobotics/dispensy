@@ -22,6 +22,10 @@
 #define LCD_WIDTH 128
 #define LCD_HEIGHT 64
 
+#define FONT_HEIGHT 8
+#define FONT_WIDTH 5
+
 void lcd_init(void);
+void lcd_splash(void);
 
 #endif // __LCD_H__
