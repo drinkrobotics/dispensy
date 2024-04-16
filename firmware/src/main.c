@@ -48,7 +48,7 @@ int main(void) {
 
     buttons_init();
     lcd_init();
-    lcd_splash();
+    lcd_splash_version();
 
     debug("go");
 

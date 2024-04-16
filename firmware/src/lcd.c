@@ -32,6 +32,7 @@ static i2c_inst_t *gpio_inst_i2c = i2c1;
 static const uint gpio_num_i2c[2] = { 14, 15 };
 
 static ssd1306_t lcd = {0};
+static bool found = false;
 
 void lcd_init(void) {
     i2c_init(gpio_inst_i2c, 2UL * 1000UL * 1000UL);
@@ -41,10 +42,20 @@ void lcd_init(void) {
         gpio_pull_up(gpio_num_i2c[i]);
     }
 
-    ssd1306_init(&lcd, LCD_WIDTH, LCD_HEIGHT, LCD_I2C_ADDR, gpio_inst_i2c);
+    found = ssd1306_init(&lcd, LCD_WIDTH, LCD_HEIGHT, LCD_I2C_ADDR, gpio_inst_i2c);
+
+    if (found) {
+        debug("SSD1306 OLED is connected");
+    } else {
+        debug("No SSD1306 OLED found!");
+    }
 }
 
-void lcd_splash(void) {
+void lcd_splash_version(void) {
+    if (!found) {
+        return;
+    }
+
     ssd1306_clear(&lcd);
 
     ssd1306_draw_string(&lcd, 0, 0, 2,

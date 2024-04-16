@@ -53,6 +53,9 @@ target_compile_options(dispensy PUBLIC
     -Wextra
     -Werror
     -Wshadow
+
+    -DSSD1306_DEBUG_PRINT=debug
+    -DSSD1306_DEBUG_INCLUDE="log.h"
 )
 
 # suppress some warnings for borked 3rd party files in Pico SDK
